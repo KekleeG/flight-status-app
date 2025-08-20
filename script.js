@@ -4,7 +4,8 @@ document.getElementById('flightForm').addEventListener('submit', async function(
   const flightNumber = document.getElementById('flightNumber').value.trim();
   const apiKey = '8c539e791182e2f06a8c398456993997'; // Your real API key
 
-  const url = `http://api.aviationstack.com/v1/flights?access_key=${apiKey}&flight_iata=${flightNumber}`;
+ const proxy = "https://cors-anywhere.herokuapp.com/";
+const url = `${proxy}http://api.aviationstack.com/v1/flights?access_key=${apiKey}&flight_iata=${flightNumber}`;
 
   const resultDiv = document.getElementById('result');
   resultDiv.innerHTML = 'Loading...';
